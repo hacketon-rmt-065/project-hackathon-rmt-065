@@ -13,20 +13,31 @@
             <button class="nav-btn" onclick="window.location.href='index.html'">Music</button>
             <button class="nav-btn" onclick="window.location.href='playlist.html'">Playlist</button>
         </div>
-            <div class="isi">
-                <div class="music-box">
-                    <button class="add-btn">ADD <span class="plus">+</span></button>
-                    <div class="music-list">
-                        <div class="music-item">
-                            <span class="music-title">Judul music/ dan penyanyi</span>
-                            <audio src="" controls></audio>
-                            <button class="remove-btn">remove <span class="trash">🗑️</span></button>
-                        </div>
+        <div class="isi">
+            <div class="music-box">
+                <button class="add-btn">ADD <span class="plus">+</span></button>
+                <div class="music-list">
+                    <div class="music-item">
+                        <span class="music-title">Judul music/ dan penyanyi</span>
+                        <audio src="" controls></audio>
+                        <button class="remove-btn">remove <span class="trash">🗑️</span></button>
                     </div>
                 </div>
             </div>
-      </div>
-    
+        </div>
+    </div>
+        <div id="musicModal" class="modal">
+            <div class="modal-content">
+                <h2 class="modal-title">Tambah Musik</h2>
+                <input id="modalTitle" type="text" placeholder="Judul lagu & penyanyi" class="modal-input">
+                <input id="modalFile" type="file" accept="audio/*" class="modal-input">
+                <div class="modal-actions">
+                    <button id="modalCancel" class="modal-btn cancel">Batal</button>
+                    <button id="modalAdd" class="modal-btn add">Tambah</button>
+                </div>
+            </div>
+        </div>
+
 </body>
 <script src="script.js"></script>
 </html>
