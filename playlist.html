@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="playlist.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playlist Manager</title>
+  <link rel="stylesheet" href="playlist.css" />
 </head>
 <body>
-    <h1 class="header">Hacketon</h1>
-    <div class="container">
-        <div class="navbar">
-            <button class="nav-btn" onclick="window.location.href='index.html'">Music</button>
-            <button class="nav-btn" onclick="window.location.href='playlist.html'">Playlist</button>
-        </div>
-        <div class="isi">
-            <div class="music-box">
-            </div>
-        </div>
+  <h1 class="header">Hacketon</h1>
+
+  <div class="container">
+    <div class="navbar">
+      <button class="nav-btn" onclick="window.location.href='index.html'">Music</button>
+      <button class="nav-btn" onclick="window.location.href='playlist.html'">Playlist</button>
     </div>
+
+    <div class="isi">
+      <div class="music-box">
+        <button id="addPlaylistBtn">+ Tambah Playlist</button>
+        <div id="playlistList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Tambah / Edit Playlist -->
+  <div id="playlistModal" class="modal">
+    <div class="modal-content">
+      <h2 id="playlistModalTitle">Tambah Playlist</h2>
+      <input type="text" id="playlistNameInput" placeholder="Nama Playlist" />
+      <div class="modal-actions">
+        <button id="cancelPlaylistBtn">Batal</button>
+        <button id="savePlaylistBtn">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Tambah Lagu -->
+  <div id="songModal" class="modal">
+    <div class="modal-content">
+      <h2>Tambah Lagu</h2>
+      <input type="text" id="songTitleInput" placeholder="Judul Lagu & Penyanyi" />
+      <input type="file" id="songFileInput" accept="audio/*" />
+      <div class="modal-actions">
+        <button id="cancelSongBtn">Batal</button>
+        <button id="saveSongBtn">Simpan Lagu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
