@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -15,10 +16,39 @@
             <button class="nav-btn" onclick="window.location.href='playlist.html'">Playlist</button>
         </div>
         <div class="isi">
-            <div class="music-box">
-            </div>
+          <div class="music-box">
+            <button id="addPlaylistBtn">+ Tambah Playlist</button>
+            <div id="playlistList"></div>
+          </div>
         </div>
     </div>
+
+  <div id="playlistModal" class="modal">
+    <div class="modal-content">
+      <h2 id="playlistModalTitle">Tambah Playlist</h2>
+      <input type="text" id="playlistNameInput" placeholder="Nama Playlist" />
+      <div class="modal-actions">
+        <button id="cancelPlaylistBtn">Batal</button>
+        <button id="savePlaylistBtn">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="songModal" class="modal">
+    <div class="modal-content">
+      <h2>Tambah Lagu</h2>
+      <select id="songSelect">
+        <option value="">-- Pilih Lagu dari Daftar --</option>
+      </select>
+      <div class="modal-actions">
+        <button id="cancelSongBtn">Batal</button>
+        <button id="saveSongBtn">Simpan Lagu</button>
+      </div>
+      <audio id="audioPlayer" controls style="display: none; margin-top: 20px;"></audio>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
