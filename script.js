@@ -41,9 +41,13 @@ const staticMusicList = [
         src: "assets/freddy-fazbear-au-au-au-ur-ur-ur-original-shorts-made-with-Voicemod.mp3",
     },
     {
-        title: "Lagu Ketiga - Penyanyi C",
-        src: "music/lagu3.mp3",
+        title: "Driving in my car",
+        src: "assets/52903.mp3",
     },
+    {
+        title: "GTA SA REMAKE",
+        src: "assets/Cihuyy.wav",
+    }
 ];
 
 // ISI DROPDOWN LANGSUNG
