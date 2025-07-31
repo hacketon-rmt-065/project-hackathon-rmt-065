@@ -24,7 +24,7 @@
   </div>
 
   <!-- Modal Tambah / Edit Playlist -->
-  <div id="playlistModal" class="modal">
+  <div id="playlistModal" class="modal" style="display:none;">
     <div class="modal-content">
       <h2 id="playlistModalTitle">Tambah Playlist</h2>
       <input type="text" id="playlistNameInput" placeholder="Nama Playlist" />
@@ -46,8 +46,9 @@
         <button id="saveSongBtn">Simpan Lagu</button>
       </div>
     </div>
+    <audio id="audioPlayer" controls style="display:none; margin-top: 20px;"></audio>
   </div>
-
+  
   <script src="script.js"></script>
 </body>
 </html>
