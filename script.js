@@ -97,6 +97,20 @@ function saveToLocalStorage() {
     localStorage.setItem('playlists', JSON.stringify(playlists));
 }
 
+function togglePlayPause(songSrc) {
+    if (audioPlayer.src !== songSrc) {
+        audioPlayer.src = songSrc;
+        audioPlayer.play();
+        audioPlayer.style.display = 'block';
+    } else {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+        } else {
+            audioPlayer.pause();
+        }
+    }
+}
+
 function renderPlaylists() {
     playlistList.innerHTML = '';
 
@@ -108,18 +122,31 @@ function renderPlaylists() {
 
         playlist.songs.forEach((song, songIndex) => {
             const songLi = document.createElement('li');
-            songLi.innerHTML = `🎵 ${song.title} `;
+            songLi.innerHTML = `<span>🎵 ${song.title}</span>`;
+            
+
 
             const playBtn = document.createElement('button');
             playBtn.textContent = '▶️';
-            playBtn.style.marginLeft = '5px';
             playBtn.addEventListener('click', () => {
-                audioPlayer.src = song.src;
-                audioPlayer.style.display = 'block';
-                audioPlayer.play();
+            togglePlayPause(song.src);
+        });
+
+            const deleteSongBtn = document.createElement('button');
+            deleteSongBtn.textContent = '🗑️';
+            deleteSongBtn.addEventListener('click', () => {
+                playlists[index].songs.splice(songIndex, 1);
+                saveToLocalStorage();
+                renderPlaylists();
             });
 
-            songLi.appendChild(playBtn);
+            const actionWrapper = document.createElement('span');
+            actionWrapper.style.display = 'flex';
+            actionWrapper.style.gap = '6px';
+            actionWrapper.appendChild(playBtn);
+            actionWrapper.appendChild(deleteSongBtn);
+            
+            songLi.appendChild(actionWrapper);
             ulSongs.appendChild(songLi);
         });
 
@@ -140,6 +167,7 @@ function renderPlaylists() {
             saveToLocalStorage();
             renderPlaylists();
         });
+        
 
         li.appendChild(addSongBtn);
         li.appendChild(deleteBtn);
