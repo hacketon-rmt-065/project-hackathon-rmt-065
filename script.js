@@ -44,6 +44,10 @@ const staticMusicList = [
         title: "Driving in my car",
         src: "assets/52903.mp3",
     },
+    {
+        title: "GTA SA REMAKE",
+        src: "assets/Cihuyy.wav",
+    }
 ];
 
 // ISI DROPDOWN LANGSUNG
