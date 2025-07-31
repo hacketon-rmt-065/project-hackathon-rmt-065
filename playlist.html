@@ -23,8 +23,8 @@
     </div>
   </div>
 
-  <!-- Modal Tambah / Edit Playlist -->
-  <div id="playlistModal" class="modal" style="display:none;">
+
+  <div id="playlistModal" class="modal">
     <div class="modal-content">
       <h2 id="playlistModalTitle">Tambah Playlist</h2>
       <input type="text" id="playlistNameInput" placeholder="Nama Playlist" />
@@ -35,20 +35,21 @@
     </div>
   </div>
 
-  <!-- Modal Tambah Lagu -->
+
   <div id="songModal" class="modal">
     <div class="modal-content">
       <h2>Tambah Lagu</h2>
-      <input type="text" id="songTitleInput" placeholder="Judul Lagu & Penyanyi" />
-      <input type="file" id="songFileInput" accept="audio/*" />
+      <select id="songSelect">
+        <option value="">-- Pilih Lagu dari Daftar --</option>
+      </select>
       <div class="modal-actions">
         <button id="cancelSongBtn">Batal</button>
         <button id="saveSongBtn">Simpan Lagu</button>
       </div>
+      <audio id="audioPlayer" controls style="display: none; margin-top: 20px;"></audio>
     </div>
-    <audio id="audioPlayer" controls style="display:none; margin-top: 20px;"></audio>
   </div>
-  
+
   <script src="script.js"></script>
 </body>
 </html>
