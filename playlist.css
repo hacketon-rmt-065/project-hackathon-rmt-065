@@ -231,11 +231,11 @@
   color: white;
 }
 
-#playlist ul li > button:first-of-type {
+#playlistList ul li > button:first-of-type {
   margin-left: auto;
 }
 
-#playlist > li > button {
+#playlistList > li > button {
   background-color: #f44336;
   border: none;
   color: black;
@@ -249,7 +249,7 @@
   user-select: none;
 }
 
-#playlist > li > button:hover {
+#playlistList > li > button:hover {
   background-color: #f44336;
   color: white;
 }
